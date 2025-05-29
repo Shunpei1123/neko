@@ -1,0 +1,27 @@
+/* ...existing code... */
+h1 {
+    margin: 0 0 0.5em 0;
+    font-size: 2.2em;
+    color: #e07a9a; /* ピンク色 */
+}
+
+h2 {
+    color: #7a5be0; /* 紫色 */
+}
+
+p {
+    color: #444; /* 濃いグレー */
+}
+
+ul li {
+    color: #2b7a78; /* 緑がかった青 */
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #ffe4ec;
+    color: #555;
+    font-size: 0.9em;
+}
+/* ...existing code... */
