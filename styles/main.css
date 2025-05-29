@@ -1,20 +1,92 @@
-/* ...existing code... */
+body {
+    font-family: 'Zen Maru Gothic', 'Yu Gothic', 'Meiryo', sans-serif;
+    background: linear-gradient(135deg, #fffafc 0%, #ffe4ec 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ffe4ec;
+    padding: 2em 1em 1em 1em;
+    text-align: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 4px 16px rgba(224, 122, 154, 0.08);
+}
+
 h1 {
     margin: 0 0 0.5em 0;
     font-size: 2.2em;
-    color: #e07a9a; /* ピンク色 */
+    color: #e07a9a;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 2px 8px #fff6fa;
 }
 
 h2 {
-    color: #7a5be0; /* 紫色 */
+    color: #7a5be0;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-left: 6px solid #e07a9a;
+    padding-left: 0.5em;
+    background: #f8f4ff;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 1px 4px rgba(122, 91, 224, 0.05);
 }
 
 p {
-    color: #444; /* 濃いグレー */
+    color: #444;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em 1.5em;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(200, 160, 200, 0.12);
+}
+
+section {
+    margin-bottom: 2em;
+    padding: 1em 0.5em;
+    border-radius: 16px;
+    background: #fff7fa;
+    box-shadow: 0 1px 8px rgba(224, 122, 154, 0.04);
+}
+
+#gallery {
+    text-align: center;
+}
+
+#gallery img {
+    width: 180px;
+    height: auto;
+    margin: 0.5em;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(150, 120, 150, 0.13);
+    border: 3px solid #ffe4ec;
+    transition: transform 0.2s;
+}
+#gallery img:hover {
+    transform: scale(1.07) rotate(-2deg);
+    border-color: #e07a9a;
 }
 
 ul li {
-    color: #2b7a78; /* 緑がかった青 */
+    color: #2b7a78;
+    font-size: 1.05em;
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    position: relative;
+}
+ul li::before {
+    content: "🐾";
+    margin-right: 0.5em;
+    font-size: 1.1em;
 }
 
 footer {
@@ -22,6 +94,9 @@ footer {
     padding: 1em;
     background: #ffe4ec;
     color: #555;
-    font-size: 0.9em;
+    font-size: 0.95em;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: 2em;
+    box-shadow: 0 -2px 12px rgba(224, 122, 154, 0.08);
 }
-/* ...existing code... */
