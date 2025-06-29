@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ねこのかわいさ</title>
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* サイト全体のアニメーション・トランジションを無効化 */
+header,
+main,
+footer,
+section,
+#cat-feature {
+    animation: none !important;
+}
+
+select#cat-select,
+select#cat-select:focus,
+select#cat-select:hover,
+#cat-feature,
+ul li,
+ul li:hover,
+#gallery img,
+#gallery img:hover {
+    transition: none !important;
+    animation: none !important;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -28,10 +50,9 @@
                 <option value="kuro">黒猫</option>
             </select>
             <div id="cat-image-area" style="margin-top:1em;">
-                <img id="cat-image" src="images/mike.jpg" alt="三毛猫" width="240" style="border-radius:16px; box-shadow:0 2px 12px #e07a9a33;">
-                <div style="margin-top:1em;">
-                    <img src="images/shiro.jpg" alt="白猫" width="120" style="border-radius:12px; margin-right:8px; box-shadow:0 1px 6px #e07a9a22;">
-                    <img src="images/kuro.jpg" alt="黒猫" width="120" style="border-radius:12px; box-shadow:0 1px 6px #e07a9a22;">
+                <!-- 画像は削除 -->
+                <div id="cat-feature" style="margin-top:1em; font-size:1.1em; color:#7a5be0; background:#fff7fa; border-radius:12px; padding:0.7em 1em; box-shadow:0 1px 6px #e07a9a22;">
+                    三毛猫は日本で人気の猫で、白・黒・茶の三色の毛が特徴です。性格はおだやかで人懐っこいことが多いです。
                 </div>
             </div>
         </section>
@@ -49,16 +70,21 @@
     </footer>
     <script>
 const catImages = {
-    mike: { src: "images/mike.jpg", alt: "三毛猫" },
-    shiro: { src: "images/shiro.jpg", alt: "白猫" },
-    kuro: { src: "images/kuro.jpg", alt: "黒猫" }
+    mike: { 
+        feature: "三毛猫は日本で人気の猫で、白・黒・茶の三色の毛が特徴です。性格はおだやかで人懐っこいことが多いです。"
+    },
+    shiro: { 
+        feature: "白猫は純白の美しい毛並みが特徴です。神秘的で気品のある雰囲気を持っています。"
+    },
+    kuro: { 
+        feature: "黒猫は艶やかな黒い毛が魅力。幸運を呼ぶとも言われ、賢くて甘えん坊な性格です。"
+    }
 };
 
 document.getElementById('cat-select').addEventListener('change', function() {
     const cat = this.value;
-    const img = document.getElementById('cat-image');
-    img.src = catImages[cat].src;
-    img.alt = catImages[cat].alt;
+    const feature = document.getElementById('cat-feature');
+    feature.textContent = catImages[cat].feature;
 });
 </script>
 </body>

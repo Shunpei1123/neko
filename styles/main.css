@@ -1,42 +1,42 @@
 body {
     font-family: 'Zen Maru Gothic', 'Yu Gothic', 'Meiryo', sans-serif;
-    background: linear-gradient(135deg, #fffafc 0%, #ffe4ec 100%);
-    color: #333;
+    background: linear-gradient(135deg, #f0faff 0%, #d0eaff 100%);
+    color: #233;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: #ffe4ec;
+    background: #d0eaff;
     padding: 2em 1em 1em 1em;
     text-align: center;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    box-shadow: 0 4px 16px rgba(224, 122, 154, 0.08);
+    box-shadow: 0 4px 16px rgba(91, 160, 224, 0.08);
 }
 
 h1 {
     margin: 0 0 0.5em 0;
     font-size: 2.2em;
-    color: #e07a9a;
+    color: #3a8ed7;
     letter-spacing: 0.1em;
-    text-shadow: 1px 2px 8px #fff6fa;
+    text-shadow: 1px 2px 8px #e6f6ff;
 }
 
 h2 {
-    color: #7a5be0;
+    color: #3a5be0;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    border-left: 6px solid #e07a9a;
+    border-left: 6px solid #3a8ed7;
     padding-left: 0.5em;
-    background: #f8f4ff;
+    background: #f4faff;
     border-radius: 8px;
     display: inline-block;
-    box-shadow: 0 1px 4px rgba(122, 91, 224, 0.05);
+    box-shadow: 0 1px 4px rgba(58, 142, 215, 0.05);
 }
 
 p {
-    color: #444;
+    color: #244;
     font-size: 1.1em;
     line-height: 1.8;
 }
@@ -45,17 +45,17 @@ main {
     max-width: 800px;
     margin: 2em auto;
     padding: 2em 1.5em;
-    background: #fff;
+    background: #fafdff;
     border-radius: 24px;
-    box-shadow: 0 4px 24px rgba(200, 160, 200, 0.12);
+    box-shadow: 0 4px 24px rgba(160, 200, 224, 0.12);
 }
 
 section {
     margin-bottom: 2em;
     padding: 1em 0.5em;
     border-radius: 16px;
-    background: #fff7fa;
-    box-shadow: 0 1px 8px rgba(224, 122, 154, 0.04);
+    background: #f0f7ff;
+    box-shadow: 0 1px 8px rgba(91, 160, 224, 0.04);
 }
 
 #gallery {
@@ -67,36 +67,80 @@ section {
     height: auto;
     margin: 0.5em;
     border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(150, 120, 150, 0.13);
-    border: 3px solid #ffe4ec;
-    transition: transform 0.2s;
+    box-shadow: 0 2px 12px rgba(120, 150, 200, 0.13);
+    border: 3px solid #d0eaff;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 #gallery img:hover {
-    transform: scale(1.07) rotate(-2deg);
-    border-color: #e07a9a;
+    transform: scale(1.12) rotate(-3deg);
+    box-shadow: 0 4px 24px #3a8ed755;
+    border-color: #3a5be0;
 }
 
 ul li {
-    color: #2b7a78;
+    color: #237a9a;
     font-size: 1.05em;
     margin-bottom: 0.5em;
     padding-left: 0.5em;
     position: relative;
+    transition: color 0.3s, background 0.3s;
 }
 ul li::before {
     content: "🐾";
     margin-right: 0.5em;
     font-size: 1.1em;
 }
+ul li:hover {
+    color: #3a8ed7;
+    background: #e6f6ff;
+    border-radius: 8px;
+}
 
 footer {
     text-align: center;
     padding: 1em;
-    background: #ffe4ec;
-    color: #555;
+    background: #d0eaff;
+    color: #355;
     font-size: 0.95em;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     margin-top: 2em;
-    box-shadow: 0 -2px 12px rgba(224, 122, 154, 0.08);
+    box-shadow: 0 -2px 12px rgba(91, 160, 224, 0.08);
+}
+
+/* フェードインアニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, main, footer, section, #cat-feature {
+    animation: fadeInUp 1s ease;
+}
+
+/* ホバー時のボタンやセレクトに動き */
+select#cat-select {
+    transition: box-shadow 0.3s, border-color 0.3s;
+    border-radius: 8px;
+    border: 2px solid #a0d8ef;
+    padding: 0.4em 1em;
+    font-size: 1.1em;
+    background: #f4faff;
+    box-shadow: 0 1px 4px #d0eaff44;
+}
+select#cat-select:focus, select#cat-select:hover {
+    border-color: #3a8ed7;
+    box-shadow: 0 2px 12px #3a8ed733;
+}
+
+/* #cat-featureにふわっとしたアニメーション */
+#cat-feature {
+    transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+    animation: fadeInUp 0.8s;
 }
