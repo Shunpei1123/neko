@@ -21,9 +21,15 @@
         </section>
         <section id="gallery">
             <h2>ねこギャラリー</h2>
-            <img src="path/to/cute-cat1.jpg" alt="かわいいねこ1">
-            <img src="path/to/cute-cat2.jpg" alt="かわいいねこ2">
-            <img src="path/to/cute-cat3.jpg" alt="かわいいねこ3">
+            <label for="cat-select" style="font-weight:bold;">猫の種類を選んでね：</label>
+            <select id="cat-select">
+                <option value="mike">三毛猫</option>
+                <option value="shiro">白猫</option>
+                <option value="kuro">黒猫</option>
+            </select>
+            <div id="cat-image-area" style="margin-top:1em;">
+                <img id="cat-image" src="images/mike.jpg" alt="三毛猫" width="240" style="border-radius:16px; box-shadow:0 2px 12px #e07a9a33;">
+            </div>
         </section>
         <section id="fun-facts">
             <h2>ねこ豆知識</h2>
@@ -37,5 +43,19 @@
     <footer>
         <p>&copy; 2025 ねこのかわいさ. All rights reserved.</p>
     </footer>
+    <script>
+const catImages = {
+    mike: { src: "images/mike.jpg", alt: "三毛猫" },
+    shiro: { src: "images/shiro.jpg", alt: "白猫" },
+    kuro: { src: "images/kuro.jpg", alt: "黒猫" }
+};
+
+document.getElementById('cat-select').addEventListener('change', function() {
+    const cat = this.value;
+    const img = document.getElementById('cat-image');
+    img.src = catImages[cat].src;
+    img.alt = catImages[cat].alt;
+});
+</script>
 </body>
 </html>
