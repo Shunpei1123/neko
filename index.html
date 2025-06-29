@@ -6,24 +6,44 @@
     <title>ねこのかわいさ</title>
     <link rel="stylesheet" href="styles/main.css">
     <style>
-        /* サイト全体のアニメーション・トランジションを無効化 */
-        header,
-        main,
-        footer,
-        section,
-        #cat-feature {
-            animation: none !important;
+        /* フェードインアニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        select#cat-select,
-        select#cat-select:focus,
-        select#cat-select:hover,
-        #cat-feature,
-        ul li,
-        ul li:hover,
-        #gallery img,
-        #gallery img:hover {
-            transition: none !important;
-            animation: none !important;
+        header, main, footer, section, #cat-feature {
+            animation: fadeInUp 1s ease;
+        }
+        select#cat-select {
+            transition: box-shadow 0.3s, border-color 0.3s;
+            border-radius: 8px;
+            border: 2px solid #a0d8ef;
+            padding: 0.4em 1em;
+            font-size: 1.1em;
+            background: #f4faff;
+            box-shadow: 0 1px 4px #d0eaff44;
+        }
+        select#cat-select:focus, select#cat-select:hover {
+            border-color: #3a8ed7;
+            box-shadow: 0 2px 12px #3a8ed733;
+        }
+        #cat-feature {
+            transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+            animation: fadeInUp 0.8s;
+        }
+        ul li {
+            transition: color 0.3s, background 0.3s;
+        }
+        ul li:hover {
+            color: #3a8ed7;
+            background: #e6f6ff;
+            border-radius: 8px;
         }
         body {
             background: linear-gradient(135deg, #f0faff 0%, #d0eaff 100%);
@@ -97,7 +117,13 @@
     document.getElementById('cat-select').addEventListener('change', function() {
         const cat = this.value;
         const feature = document.getElementById('cat-feature');
-        feature.textContent = catFeatures[cat];
+        // フェードアウト
+        feature.style.opacity = 0;
+        setTimeout(() => {
+            feature.textContent = catFeatures[cat];
+            // フェードイン
+            feature.style.opacity = 1;
+        }, 200);
     });
     </script>
 </body>
